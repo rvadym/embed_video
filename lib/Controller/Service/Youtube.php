@@ -23,10 +23,6 @@ class Controller_Service_Youtube extends Controller_EmbedVideo {
         return $this->getYoutubeID($link);
     }
 
-    function getEmbedHTML() {
-
-    }
-
     function getThumbs($video_id) {
         return array(
             "http://img.youtube.com/vi/$video_id/0.jpg",

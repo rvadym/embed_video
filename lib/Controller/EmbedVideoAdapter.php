@@ -51,4 +51,16 @@ class Controller_EmbedVideoAdapter extends \AbstractController {
         }
         return $video_service->getThumbs($video_id);
     }
+
+    function getEmbedHTML($video_id,$video_service_type=null) {
+        if (!$video_id) throw $this->exception('What is video id?');
+        if (!$this->video_service && !$video_service_type) {
+            throw $this->exception('Not clear what video service should be used.');
+        } else if (!$this->video_service) {
+            $video_service = $this->services[$video_service_type];
+        } else {
+            $video_service = $this->video_service;
+        }
+        return $video_service->getEmbedHTML($video_id,'500px','400px');
+    }
 }
