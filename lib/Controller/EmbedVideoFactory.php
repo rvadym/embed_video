@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 namespace rvadym\embed_video;
-class Controller_EmbedVideoFactory extends \AbstractController {
+class Controller_EmbedVideoAdapter extends \AbstractController {
 
     private $services = array();
     public $video_service;

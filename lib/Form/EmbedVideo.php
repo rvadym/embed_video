@@ -11,7 +11,7 @@ class Form_EmbedVideo extends \Form {
     public $ev_factory;
     function init() {
         parent::init();
-        $this->ev_factory = $this->add('rvadym\\embed_video\\Controller_EmbedVideoFactory');
+        $this->ev_factory = $this->add('rvadym\\embed_video\\Controller_EmbedVideoAdapter');
         $this->addFields();
         $this->addSubmitButton();
         $this->configure();
