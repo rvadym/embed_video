@@ -9,6 +9,7 @@
 namespace rvadym\embed_video;
 class Controller_Service_Vimeo extends Controller_EmbedVideo {
 
+    public $service_type = 'vimeo.com';
 
     // http://stackoverflow.com/questions/17156298/get-id-video-vimeo-with-regexp-preg-match
 

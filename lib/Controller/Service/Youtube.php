@@ -9,6 +9,8 @@
 namespace rvadym\embed_video;
 class Controller_Service_Youtube extends Controller_EmbedVideo {
 
+    public $service_type = 'youtube.com';
+
     // https://developers.google.com/youtube/iframe_api_reference
     public $embed_html = '
         <iframe id="player" type="text/html" width="WIDTH" height="HEIGHT"
@@ -16,7 +18,7 @@ class Controller_Service_Youtube extends Controller_EmbedVideo {
           frameborder="0"></iframe>';
 
     public $service_regexp = "/^http:\/\/(?:www\.)?(?:youtube.com|youtu.be)\/(?:watch\?(?=.*v=([\w\-]+))(?:\S+)?|([\w\-]+))$/";
-   
+
     function getVideoID($link) {
         return $this->getYoutubeID($link);
     }

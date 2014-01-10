@@ -35,4 +35,8 @@ class Controller_EmbedVideoFactory extends \AbstractController {
             throw $this->exception('Video type not recognized or not supported','rvadym\\embed_video\\VideoTypeNotRecognized');
         return $video_id;
     }
+
+    function getServiceType() {
+        return $this->video_service->service_type;
+    }
 }
