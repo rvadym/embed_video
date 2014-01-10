@@ -27,6 +27,15 @@ class Controller_Service_Youtube extends Controller_EmbedVideo {
 
     }
 
+    function getThumbs($video_id) {
+        return array(
+            "http://img.youtube.com/vi/$video_id/0.jpg",
+            "http://img.youtube.com/vi/$video_id/1.jpg",
+            "http://img.youtube.com/vi/$video_id/2.jpg",
+            "http://img.youtube.com/vi/$video_id/3.jpg",
+        );
+    }
+
     private function getYoutubeID($url) {
         $pattern = '#^(?:https?://)?(?:www\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})(?:.+)?$#x';
         preg_match($pattern, $url, $matches);

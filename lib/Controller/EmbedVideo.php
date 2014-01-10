@@ -23,5 +23,6 @@ abstract class Controller_EmbedVideo extends \AbstractController {
 
     abstract function getVideoID($link);
     abstract function getEmbedHTML();
+    abstract function getThumbs($video_id);
 
 }

@@ -30,6 +30,17 @@ class Controller_Service_Vimeo extends Controller_EmbedVideo {
 
     }
 
+    function getThumbs($video_id) {
+        $url = "http://vimeo.com/api/v2/video/$video_id.json";
+        $json = file_get_contents($url);
+        $arr = json_decode($json,true);
+        return array(
+            $arr[0]['thumbnail_small'],
+            $arr[0]['thumbnail_medium'],
+            $arr[0]['thumbnail_large'],
+        );
+    }
+
     private function getVimeoID( $url ) {
     	$regex = '~
     		# Match Vimeo link and embed code
