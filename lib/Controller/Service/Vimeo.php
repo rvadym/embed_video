@@ -6,14 +6,15 @@
  * Time: 9:22 AM
  * To change this template use File | Settings | File Templates.
  */
+
+// http://stackoverflow.com/questions/17156298/get-id-video-vimeo-with-regexp-preg-match
+// http://developer.vimeo.com/player/embedding
+
 namespace rvadym\embed_video;
 class Controller_Service_Vimeo extends Controller_EmbedVideo {
 
     public $service_type = 'vimeo.com';
 
-    // http://stackoverflow.com/questions/17156298/get-id-video-vimeo-with-regexp-preg-match
-
-    // http://developer.vimeo.com/player/embedding
     public $embed_html = '
         <iframe src="//player.vimeo.com/video/VIDEO_ID"
                 width="WIDTH" height="HEIGHT" frameborder="0"
@@ -31,8 +32,8 @@ class Controller_Service_Vimeo extends Controller_EmbedVideo {
         $json = file_get_contents($url);
         $arr = json_decode($json,true);
         return array(
-            $arr[0]['thumbnail_small'],
             $arr[0]['thumbnail_medium'],
+            $arr[0]['thumbnail_small'],
             $arr[0]['thumbnail_large'],
         );
     }
